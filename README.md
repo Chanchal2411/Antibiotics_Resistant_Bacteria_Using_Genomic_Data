@@ -37,30 +37,39 @@ To develop and evaluate classification models that:
 
 ---
 
-## 🔄 Model Evaluation
+
+## ⚙️ Technologies & Libraries
+
+- `Python 3`
+- `Scikit-learn`, `XGBoost`, `CatBoost`
+- `Imbalanced-learn` (SMOTE, SMOTENC)
+- `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`, `Plotly`
+- `BioPython` for DNA sequence operations
+
+---
+
+## 🔁 Model Evaluation Strategy
 
 - **K-Fold Cross Validation (K=4)**
-- Metrics:
-  - Balanced Accuracy
-  - Confusion Matrix
-  - ROC Curve
-  - Precision-Recall Curve
-- **Feature Importance** visualized from SVC, CatBoost, XGBoost, and RF
+- Metrics Used:
+  - **Balanced Accuracy**
+  - **Confusion Matrix**
+  - **ROC Curve** (Receiver Operating Characteristic)
+  - **Precision-Recall Curve**
+- Feature importance extracted from SVC (via `coef_`) and tree-based models (`feature_importances_`)
 
 ---
 
-## 🧬 Dataset
+## 🗂️ Project Structure
 
-The dataset consists of:
-- **Unitigs (short genomic sequences)**
-- **Metadata** for resistance classification (`cip_sr`, `azm_sr`, `cfx_sr`)
-- Sourced from the **Kaggle dataset**: `nwheeler443/gono-unitigs`
+```bash
+.
+├── data/                 # Raw and processed datasets
+├── notebooks/            # Jupyter Notebooks for exploration/training
+├── models/               # Trained model pickle files
+├── outputs/              # Plots, confusion matrix, curves
+├── src/                  # Custom classes and pipeline scripts
+├── CODE.docx             # Full implementation code
+├── README.md             # You are here!
+└── requirements.txt      # Python package dependencies
 
----
-
-## ⚙️ How to Run
-
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/yourusername/antibiotic-resistance-ml.git
-   cd antibiotic-resistance-ml
